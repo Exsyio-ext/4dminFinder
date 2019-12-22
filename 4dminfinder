@@ -1,0 +1,14 @@
+#!/bin/bash
+echo""
+# facebook.com/virus.system007"
+# @rikkimartin.rin"
+# YT Exsyio Tech"
+clear
+echo ""
+echo -n "Enter Your Url: "
+read url
+clear
+for i in $(cat admin.txt); do
+	echo -n -e "$(tput setaf 1) $url$i$(tput setaf 7) "
+	curl -s -I $url$i | grep HTTP | awk '{print $2}'
+done
